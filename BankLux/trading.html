@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BankLux - Compras e Vendas</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-container">
+    <aside class="sidebar">
+        <h2>BankLux</h2>
+        <ul>
+           <li><a href="home.html">Home</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="investments.html">Investimentos</a></li>
+            <li><a href="trading.html">Compras e Vendas</a></li>
+            <li><a href="transfer.html">Transferências</a></li>
+            <li><a href="deposit.html">Depósito</a></li>
+            <li><a href="statements.html">Extrato</a></li>
+            <li><a href="profile.html">Perfil</a></li>
+            <li><button id="logoutBtn">Sair</button></li>
+        </ul>
+    </aside>
+
+  <main>
+    <header><h1>Compras e Vendas</h1></header>
+
+    <section class="trading-section">
+      <div class="card-animate">
+        <h3>Ações - Tesla</h3>
+        <p>Preço atual: R$ 2.500,00</p>
+        <button>Comprar</button>
+        <button>Vender</button>
+      </div>
+      <div class="card-animate">
+        <h3>Fundo Imobiliário - XP</h3>
+        <p>Preço atual: R$ 150,00</p>
+        <button>Comprar</button>
+        <button>Vender</button>
+      </div>
+      <div class="card-animate">
+        <h3>Criptomoeda - Bitcoin</h3>
+        <p>Preço atual: R$ 120.000,00</p>
+        <button>Comprar</button>
+        <button>Vender</button>
+      </div>
+    </section>
+
+    <section class="card-animate">
+      <h3>Rendimentos do Portfólio</h3>
+      <canvas id="tradingChart"></canvas>
+    </section>
+
+    <section class="card-animate">
+      <h3>Distribuição de Investimentos</h3>
+      <canvas id="distributionChart"></canvas>
+    </section>
+  </main>
+</div>
+
+<script>
+  // Gráfico de Linha - Rendimentos
+  const ctxLine = document.getElementById('tradingChart').getContext('2d');
+  new Chart(ctxLine, {
+    type: 'line',
+    data: {
+      labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul'],
+      datasets: [{
+        label: 'Valor do Portfólio (R$)',
+        data: [5000, 5500, 5800, 6000, 6500, 7000, 7500],
+        borderColor: '#FFD700',
+        backgroundColor: 'rgba(255, 215, 0, 0.3)',
+        fill: true,
+        tension: 0.4,
+        pointBackgroundColor: '#FFD700',
+        pointBorderColor: '#000'
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { labels: { color: '#FFD700' } } },
+      scales: {
+        x: { ticks: { color: '#fff' } },
+        y: { ticks: { color: '#fff' } }
+      }
+    }
+  });
+
+  // Gráfico de Donut - Distribuição
+  const ctxDonut = document.getElementById('distributionChart').getContext('2d');
+  new Chart(ctxDonut, {
+    type: 'doughnut',
+    data: {
+      labels: ['Ações', 'FIIs', 'Cripto', 'Renda Fixa'],
+      datasets: [{
+        data: [30, 25, 20, 25],
+        backgroundColor: ['#FFD700', '#B8860B', '#DAA520', '#808000'],
+        borderColor: '#000',
+        borderWidth: 2
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { labels: { color: '#FFD700' } } }
+    }
+  });
+</script>
+</body>
+</html>
