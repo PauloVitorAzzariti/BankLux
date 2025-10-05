@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BankLux - Home</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="app.js"></script>
+</head>
+<body>
+
+<main>
+  <header>
+    <h2 class="titulo-banklux">BankLux</h2>
+    <h1>Bem-vindo, Paulo Vitor Azzariti</h1>
+  </header>
+
+  <!-- SALDO E AÇÕES -->
+  <section class="balance-section">
+    <div class="balance-card card-animate">
+      <h2>Saldo Disponível</h2>
+      <p>R$ <span id="balance">25.450,75</span></p>
+
+      <!-- mini gráfico de saldo -->
+      <canvas id="balanceChart" style="max-height: 180px;"></canvas>
+    </div>
+
+    <div class="actions-card card-animate">
+      <h2>Ações Rápidas</h2>
+      <div class="actions">
+        <button class="action-btn" onclick="window.location.href='dashboard.html'">Dashboard</button>
+        <button class="action-btn" onclick="window.location.href='investments.html'">Investimentos</button>
+        <button class="action-btn" onclick="window.location.href='trading.html'">Compras e Vendas</button>
+        <button class="action-btn" onclick="window.location.href='transfer.html'">Transferências</button>
+        <button class="action-btn" onclick="window.location.href='deposit.html'">Depositar</button>
+        <button class="action-btn" onclick="window.location.href='statements.html'">Extrato</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSAÇÕES RECENTES -->
+  <section class="transactions card-animate">
+    <h2>Últimas Transações</h2>
+    <ul id="transactionList">
+      <li>Transferência - R$ 120,00 - <span>01/10/2025</span></li>
+      <li>Pagamento - R$ 55,50 - <span>30/09/2025</span></li>
+      <li>Depósito - R$ 1.000,00 - <span>28/09/2025</span></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

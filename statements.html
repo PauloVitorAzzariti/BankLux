@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BankLux - Extrato</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="app.js"></script>
+</head>
+<body>
+<div class="app-container">
+  <aside class="sidebar">
+    <h2>BankLux</h2>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="investments.html">Investimentos</a></li>
+      <li><a href="trading.html">Compras e Vendas</a></li>
+      <li><a href="transfer.html">Transferências</a></li>
+      <li><a href="deposit.html">Depósito</a></li>
+      <li><a href="statements.html" class="active">Extrato</a></li>
+      <li><a href="profile.html">Perfil</a></li>
+      <li><button id="logoutBtn">Sair</button></li>
+    </ul>
+  </aside>
+
+  <main>
+    <header><h1>📄 Extrato Bancário</h1></header>
+
+    <!-- Saldo e Filtros -->
+    <section class="statement-header card-animate">
+      <div class="balance-info">
+        <h2>Saldo Atual</h2>
+        <p class="balance-value">R$ 25.450,75</p>
+      </div>
+      <div class="filter-container">
+        <select>
+          <option>Últimos 7 dias</option>
+          <option>Últimos 30 dias</option>
+          <option>Últimos 3 meses</option>
+        </select>
+        <input type="text" placeholder="Buscar por descrição...">
+        <button>Filtrar</button>
+      </div>
+    </section>
+
+    <!-- Lista de transações -->
+    <section class="statement-section card-animate">
+      <table class="statement-table">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Tipo</th>
+            <th>Descrição</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="positive">
+            <td>01/10/2025</td>
+            <td><i data-lucide="arrow-down-circle"></i> Entrada</td>
+            <td>Depósito Bancário</td>
+            <td>+ R$ 5.000,00</td>
+          </tr>
+          <tr class="negative">
+            <td>02/10/2025</td>
+            <td><i data-lucide="arrow-up-circle"></i> PIX Enviado</td>
+            <td>Transferência João M.</td>
+            <td>- R$ 1.200,00</td>
+          </tr>
+          <tr class="negative">
+            <td>03/10/2025</td>
+            <td><i data-lucide="shopping-cart"></i> Investimento</td>
+            <td>Compra de Ações</td>
+            <td>- R$ 2.000,00</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</div>
+
+<script>
+lucide.createIcons();
+</script>
+</body>
+</html>

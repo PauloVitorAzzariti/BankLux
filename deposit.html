@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BankLux - Depósito</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <h2>BankLux</h2>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="investments.html">Investimentos</a></li>
+        <li><a href="trading.html">Compras e Vendas</a></li>
+        <li><a href="transfer.html">Transferências</a></li>
+        <li><a href="deposit.html" class="active">Depósito</a></li>
+        <li><a href="statements.html">Extrato</a></li>
+        <li><a href="profile.html">Perfil</a></li>
+        <li><button id="logoutBtn">Sair</button></li>
+      </ul>
+    </aside>
+
+    <main>
+      <header>
+        <h1>Depósito</h1>
+        <p>Adicione fundos à sua conta de forma rápida e segura.</p>
+      </header>
+
+      <section class="deposit-section card-animate">
+        <div class="deposit-card">
+          <h2>Escolha o método de depósito</h2>
+
+          <!-- Seleção do método -->
+          <div class="deposit-method">
+            <label>
+              <input type="radio" name="depositType" value="bank" checked>
+              Conta / Agência
+            </label>
+            <label>
+              <input type="radio" name="depositType" value="pix">
+              PIX
+            </label>
+          </div>
+
+          <!-- Formulário Conta/Agência -->
+          <form id="bankForm">
+            <div class="form-group">
+              <label for="depositAccount">Número da Conta</label>
+              <input type="text" id="depositAccount" placeholder="Ex: 12345-6" required>
+            </div>
+
+            <div class="form-group">
+              <label for="depositAgency">Agência</label>
+              <input type="text" id="depositAgency" placeholder="Ex: 0001" required>
+            </div>
+
+            <div class="form-group">
+              <label for="depositAmount">Valor (R$)</label>
+              <input type="number" id="depositAmount" placeholder="Ex: 1000,00" required>
+            </div>
+
+            <button type="submit" class="btn-primary">Confirmar Depósito</button>
+          </form>
+
+          <!-- Formulário PIX -->
+          <form id="pixForm" class="hidden">
+            <div class="form-group">
+              <label for="pixKey">Chave PIX</label>
+              <input type="text" id="pixKey" placeholder="Ex: email@exemplo.com ou CPF" required>
+            </div>
+
+            <div class="form-group">
+              <label for="pixAmount">Valor (R$)</label>
+              <input type="number" id="pixAmount" placeholder="Ex: 500,00" required>
+            </div>
+
+            <button type="submit" class="btn-primary">Enviar via PIX</button>
+          </form>
+
+          <p id="depositMsg" class="success-message"></p>
+          <p id="pixMsg" class="success-message"></p>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+  <script src="deposit.js"></script>
+</body>
+</html>

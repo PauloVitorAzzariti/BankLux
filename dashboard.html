@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BankLux - Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="app.js"></script>
+</head>
+<body>
+<div class="app-container">
+    <aside class="sidebar">
+        <h2>BankLux</h2>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="investments.html">Investimentos</a></li>
+            <li><a href="trading.html">Compras e Vendas</a></li>
+            <li><a href="transfer.html">Transferências</a></li>
+            <li><a href="deposit.html">Depósito</a></li>
+            <li><a href="statements.html">Extrato</a></li>
+            <li><a href="profile.html">Perfil</a></li>
+            <li><button id="logoutBtn">Sair</button></li>
+        </ul>
+    </aside>
+
+    <main>
+        <header><h1>Dashboard</h1></header>
+
+        <section class="balance-section">
+            <div class="balance-card card-animate">
+                <h2>Saldo Total</h2>
+                <p>R$ <span id="totalBalance">25.450,75</span></p>
+            </div>
+            <div class="investment-card card-animate">
+                <h2>Rendimento Mensal</h2>
+                <p>+ R$ <span id="monthlyProfit">3.450,25</span></p>
+            </div>
+        </section>
+
+        <section class="charts">
+            <div class="chart-container card-animate">
+                <h3>Distribuição de Investimentos</h3>
+                <canvas id="investmentChart"></canvas>
+            </div>
+            <div class="chart-container card-animate">
+                <h3>Rendimento Últimos 6 Meses</h3>
+                <canvas id="profitChart"></canvas>
+            </div>
+        </section>
+    </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BankLux - Login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="login-wrapper">
+    <div class="login-card">
+        <div class="logo">
+            <h1>BankLux</h1>
+        </div>
+        <form id="loginForm">
+            <div class="input-group">
+                <span class="icon">👤</span>
+                <input type="text" id="username" placeholder="Usuário" required>
+            </div>
+            <div class="input-group">
+                <span class="icon">🔒</span>
+                <input type="password" id="password" placeholder="Senha" required>
+            </div>
+            <button type="submit">ENTRAR</button>
+            <p class="forgot-password"><a href="#">Esqueceu a senha?</a></p>
+            <p class="signup-link">Não tem conta? <a href="#">Criar Conta</a></p>
+        </form>
+        <p class="error-message" id="errorMsg"></p>
+    </div>
+</div>
+
+<script src="login.js"></script>
+</body>
+</html>
